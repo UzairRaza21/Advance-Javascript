@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Function</title>
+</head>
+<body>
+    <script>
+        function *hello(){
+            yield "First";
+            yield "Second";
+            yield "Third";
+        }
+        let a = hello();
+
+        console.log(a.next().value);
+        console.log(a.next().value);
+        console.log(a.next().value);
+    </script>
+</body>
+</html>
