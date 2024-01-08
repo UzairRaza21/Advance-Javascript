@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch-Insert</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <label for="fullname">Full Name: 
+            <input type="text" name="fullname" id="fullname">
+        </label>
+        <label for="fullname">Mobile: 
+            <input type="text" name="mobile" id="mobile">
+        </label>
+        <input type="submit" value="Submit" name="submit" id="submit">
+    </form>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", function(e){
+            e.preventDefault();
+            // let obj = {
+            //     fullname : document.getElementById("fullname").value,
+            //     mobile : document.getElementById("mobile").value,
+            // };
+
+            fetch('read.txt', {
+                method: 'POST',
+                // body: JSON.stringify(obj),
+                body : new FormData(document.getElementById("myForm")),
+                headers: {
+                    // 'Content-type' : 'application/json'
+                    'Content-type' : 'application/x-www-form-urlencoded',
+                }
+            })
+        }).then((response => response.json()))
+        .then((json) => console.log(json))
+    </script>
+
+
+
+</body>
+</html>
