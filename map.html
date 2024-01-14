@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Function</title>
+</head>
+<body>
+    <p id = "demo"></p>
+
+    <script>
+        const productName = [{
+            product : "Jug",
+            price : 2000,
+            description : "Good and best quality"
+        }];
+
+        document.getElementById("demo").innerHTML = productName.map(display);
+        
+
+        function display(item){
+            return item.price
+        }
+    </script>
+
+    <!-- <h2>JavaScript Arrays</h2>
+
+<p>Compute a new array with the full name of each person in the old array:</p>
+
+<p id="demo"></p>
+
+<script>
+const persons = [
+  {firstname : "Malcom", lastname: "Reynolds"},
+  {firstname : "Kaylee", lastname: "Frye"},
+  {firstname : "Jayne", lastname: "Cobb"}
+];
+
+document.getElementById("demo").innerHTML = persons.map(getFullName);
+
+function getFullName(item) {
+  return item.firstname
+} -->
+<!-- </script> -->
+</body>
+</html>
